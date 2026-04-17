@@ -1,0 +1,53 @@
+project:
+  name: Inventory Summary CLI
+tasks:
+  - id: INV-001
+    title: Normalize inventory loading
+    description: Implement item loading from YAML and normalize status and owner fields.
+    acceptance_criteria:
+      - load_items returns a list of dictionaries with name, status, and owner keys
+      - status values are normalized to lowercase
+      - missing owners are normalized to unassigned
+      - count_by_status returns accurate aggregate counts
+    priority: 1
+    status: Ready
+    qa_result: Pending
+    coder_note: ""
+    qa_note: ""
+    architect_note: ""
+    depends_on: []
+  - id: INV-002
+    title: Add operator-facing CLI summary
+    description: Implement a CLI entrypoint that reads the YAML file and prints a deterministic summary.
+    acceptance_criteria:
+      - python -m inventory_report.cli data/items.yml exits with status 0
+      - output includes a total line and one line per status
+      - status lines are sorted alphabetically for stable output
+    priority: 2
+    status: Ready
+    qa_result: Pending
+    coder_note: ""
+    qa_note: ""
+    architect_note: ""
+    depends_on:
+      - INV-001
+  - id: INV-003
+    title: Add regression tests and usage notes
+    description: Add tests for the report helpers and CLI output, and document the local run command.
+    acceptance_criteria:
+      - pytest passes for the target project
+      - tests cover report aggregation and CLI output
+      - README includes the local run command
+    priority: 3
+    status: Ready
+    qa_result: Pending
+    coder_note: ""
+    qa_note: ""
+    architect_note: ""
+    depends_on:
+      - INV-001
+      - INV-002
+project_qa:
+  result: Pending
+  note: ""
+

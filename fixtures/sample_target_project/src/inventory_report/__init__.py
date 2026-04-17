@@ -1,0 +1,2 @@
+"""Inventory summary fixture package."""
+

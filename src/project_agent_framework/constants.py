@@ -1,0 +1,10 @@
+"""Framework constants."""
+
+FRAMEWORK_DIRNAME = ".project_agent"
+LOGS_DIRNAME = "logs"
+DEFAULT_TODO_FILENAME = "TODO.yml"
+DEFAULT_BACKUP_FILENAME = "TODO.yml.bak"
+DEFAULT_PRD_FILENAME = "PRD.md"
+DEFAULT_MAX_RETRIES = 3
+DEFAULT_CODEX_BIN = "codex"
+
